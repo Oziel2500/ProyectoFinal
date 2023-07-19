@@ -101,7 +101,6 @@ namespace ProyectoFinal
                 // conexion.CerrarConexion();
 
                 // Actualizar el DataGridView con los nuevos datos
-                CargarDatosDataGridView();
 
             }
             catch (Exception ex)
