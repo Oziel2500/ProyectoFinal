@@ -52,91 +52,7 @@ namespace ProyectoFinal
 
         }
 
-
-
-        private void btnAltaLibro_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //--------- Obtener los datos del formulario-----------
-                string isbn = txtISBN.Text;
-                string titulo = txtTitulo.Text;
-                string autor = txtAutor.Text;
-                string genero = cmbGenero.Text;
-                int cantEjemplares = Convert.ToInt32(txtCantEjemplares.Text);
-                int anioPublicacion = Convert.ToInt32(txtAnioPublicacion.Text);
-
-                // ------------Abrir la conexión a la base de datos---------------
-              //  conexion.AbrirConexion();
-
-                // -------------Crear el comando SQL para la inserción--------------
-                string consulta = $"INSERT INTO Libros (ISBN, Titulo, Autor, Genero, Cant_Ejemplares, AnioPublicacion) " +
-                    $"VALUES ('{isbn}', '{titulo}', '{autor}', '{genero}', {cantEjemplares}, {anioPublicacion})";
-
-                //  SqlCommand comando = conexion.CrearComando(consulta);
-
-                // -----------Ejecutar el comando de inserción----------
-                //  int filasAfectadas = comando.ExecuteNonQuery();
-
-                // Actualizar el DataGridView con los nuevos datos
-                CargarDatosDataGridView();
-
-                //--------- Cerrar la conexión a la base de datos-----------------
-                //   conexion.CerrarConexion();
-
-                //   if (filasAfectadas > 0)
-                //   {
-                //       MessageBox.Show("Libro dado de alta exitosamente.");
-                //      LimpiarFormulario();
-                //  }
-                // else
-                //  {
-                //      MessageBox.Show("Error al dar de alta el libro.");
-                //  }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
-        private void btnBajaLibro_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Obtener el ID del libro a dar de baja (por ejemplo, seleccionándolo de un DataGridView)
-                int idLibro = ObtenerIdLibroSeleccionado();
-
-                //---------------- Abrir la conexión a la base de datos---------------
-                //conexion.AbrirConexion();
-
-                // Crear el comando SQL para la eliminación
-                string consulta = $"DELETE FROM Libros WHERE ID = {idLibro}";
-
-               // SqlCommand comando = conexion.CrearComando(consulta);
-
-                // -------------------Ejecutar el comando de eliminación----------------
-              //  int filasAfectadas = comando.ExecuteNonQuery();
-
-                // ---------------Cerrar la conexión a la base de datos--------------
-               // conexion.CerrarConexion();
-
-              //  if (filasAfectadas > 0)
-                {
-                //    MessageBox.Show("Libro dado de baja exitosamente.");
-                //    LimpiarFormulario();
-                }
-               // else
-                {
-                //    MessageBox.Show("Error al dar de baja el libro.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
-
+  
         private int ObtenerIdLibroSeleccionado()
         {
             int idLibroSeleccionado = 0;
@@ -208,6 +124,89 @@ namespace ProyectoFinal
         private void dtgLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             ObtenerIdLibroSeleccionado();
+        }
+
+        private void btnAltaLibro_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                //--------- Obtener los datos del formulario-----------
+                string isbn = txtISBN.Text;
+                string titulo = txtTitulo.Text;
+                string autor = txtAutor.Text;
+                string genero = cmbGenero.Text;
+                int cantEjemplares = Convert.ToInt32(txtCantEjemplares.Text);
+                int anioPublicacion = Convert.ToInt32(txtAnioPublicacion.Text);
+
+                // ------------Abrir la conexión a la base de datos---------------
+                //  conexion.AbrirConexion();
+
+                // -------------Crear el comando SQL para la inserción--------------
+                string consulta = $"INSERT INTO Libros (ISBN, Titulo, Autor, Genero, Cant_Ejemplares, AnioPublicacion) " +
+                    $"VALUES ('{isbn}', '{titulo}', '{autor}', '{genero}', {cantEjemplares}, {anioPublicacion})";
+
+                //  SqlCommand comando = conexion.CrearComando(consulta);
+
+                // -----------Ejecutar el comando de inserción----------
+                //  int filasAfectadas = comando.ExecuteNonQuery();
+
+                // Actualizar el DataGridView con los nuevos datos
+                CargarDatosDataGridView();
+
+                //--------- Cerrar la conexión a la base de datos-----------------
+                //   conexion.CerrarConexion();
+
+                //   if (filasAfectadas > 0)
+                //   {
+                //       MessageBox.Show("Libro dado de alta exitosamente.");
+                //      LimpiarFormulario();
+                //  }
+                // else
+                //  {
+                //      MessageBox.Show("Error al dar de alta el libro.");
+                //  }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void btnBajaLibro_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Obtener el ID del libro a dar de baja (por ejemplo, seleccionándolo de un DataGridView)
+                int idLibro = ObtenerIdLibroSeleccionado();
+
+                //---------------- Abrir la conexión a la base de datos---------------
+                //conexion.AbrirConexion();
+
+                // Crear el comando SQL para la eliminación
+                string consulta = $"DELETE FROM Libros WHERE ID = {idLibro}";
+
+                // SqlCommand comando = conexion.CrearComando(consulta);
+
+                // -------------------Ejecutar el comando de eliminación----------------
+                //  int filasAfectadas = comando.ExecuteNonQuery();
+
+                // ---------------Cerrar la conexión a la base de datos--------------
+                // conexion.CerrarConexion();
+
+                //  if (filasAfectadas > 0)
+                {
+                    //    MessageBox.Show("Libro dado de baja exitosamente.");
+                    //    LimpiarFormulario();
+                }
+                // else
+                {
+                    //    MessageBox.Show("Error al dar de baja el libro.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }
