@@ -35,6 +35,7 @@ namespace ProyectoFinal
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnRedirigir = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -97,11 +98,22 @@ namespace ProyectoFinal
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 3;
             // 
+            // btnRedirigir
+            // 
+            this.btnRedirigir.Location = new System.Drawing.Point(63, 163);
+            this.btnRedirigir.Name = "btnRedirigir";
+            this.btnRedirigir.Size = new System.Drawing.Size(125, 73);
+            this.btnRedirigir.TabIndex = 4;
+            this.btnRedirigir.Text = "Test Altas y Bajas Libros";
+            this.btnRedirigir.UseVisualStyleBackColor = true;
+            this.btnRedirigir.Click += new System.EventHandler(this.btnRedirigir_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnRedirigir);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.tabControl1);
@@ -123,6 +135,7 @@ namespace ProyectoFinal
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnRedirigir;
     }
 }
 

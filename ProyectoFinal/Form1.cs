@@ -16,5 +16,17 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        private void btnRedirigir_Click(object sender, EventArgs e)
+        {
+    
+                // Crear una instancia de la FormRedirigida
+                FormLibros formRedirigida = new FormLibros();
+
+                // Mostrar la FormRedirigida utilizando el método Show()
+                formRedirigida.Show();
+                this.Hide();
+
+        }
     }
 }
