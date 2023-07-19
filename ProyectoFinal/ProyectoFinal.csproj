@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="Cubiculo_Equipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cubiculo_Equipo.Designer.cs">
+      <DependentUpon>Cubiculo_Equipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cubiculo_Individual.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cubiculo_Equipo.resx">
+      <DependentUpon>Cubiculo_Equipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cubiculo_Individual.resx">
       <DependentUpon>Cubiculo_Individual.cs</DependentUpon>
     </EmbeddedResource>
