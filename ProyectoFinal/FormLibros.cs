@@ -14,18 +14,18 @@ namespace ProyectoFinal
     public partial class FormLibros : Form
     {
 
-       // Conexion conexion;
+        // Conexion conexion;
         public FormLibros()
         {
             InitializeComponent();
 
 
             // ----------Inicializar la clase de conexión con los datos de acceso a la base de datos------------
-           // string servidor = "tu_servidor";
-           // string baseDatos = "Biblioteca";
-           // string usuario = "tu_usuario";
-           // string contraseña = "tu_contraseña";
-           // conexion = new Conexion(servidor, baseDatos, usuario, contraseña);
+            // string servidor = "tu_servidor";
+            // string baseDatos = "Biblioteca";
+            // string usuario = "tu_usuario";
+            // string contraseña = "tu_contraseña";
+            // conexion = new Conexion(servidor, baseDatos, usuario, contraseña);
 
             // Configurar el DataGridView
             dtgLibros.AutoGenerateColumns = false;
@@ -43,7 +43,7 @@ namespace ProyectoFinal
             dtgLibros.Columns.Add("AnioPublicacion", "Año de Publicación");
 
             // Llamar al método para cargar los datos en el DataGridView
-          //  CargarDatosDataGridView();
+            //  CargarDatosDataGridView();
 
         }
 
@@ -52,7 +52,7 @@ namespace ProyectoFinal
 
         }
 
-  
+
         private int ObtenerIdLibroSeleccionado()
         {
             int idLibroSeleccionado = 0;
@@ -127,49 +127,58 @@ namespace ProyectoFinal
 
         private void btnAltaLibro_Click_1(object sender, EventArgs e)
         {
-            try
+            if (txtISBN.TextLength != 13)
             {
-                //--------- Obtener los datos del formulario-----------
-                string isbn = txtISBN.Text;
-                string titulo = txtTitulo.Text;
-                string autor = txtAutor.Text;
-                string genero = cmbGenero.Text;
-                int cantEjemplares = Convert.ToInt32(txtCantEjemplares.Text);
-                int anioPublicacion = Convert.ToInt32(txtAnioPublicacion.Text);
-
-                // ------------Abrir la conexión a la base de datos---------------
-                //  conexion.AbrirConexion();
-
-                // -------------Crear el comando SQL para la inserción--------------
-                string consulta = $"INSERT INTO Libros (ISBN, Titulo, Autor, Genero, Cant_Ejemplares, AnioPublicacion) " +
-                    $"VALUES ('{isbn}', '{titulo}', '{autor}', '{genero}', {cantEjemplares}, {anioPublicacion})";
-
-                //  SqlCommand comando = conexion.CrearComando(consulta);
-
-                // -----------Ejecutar el comando de inserción----------
-                //  int filasAfectadas = comando.ExecuteNonQuery();
-
-                // Actualizar el DataGridView con los nuevos datos
-                CargarDatosDataGridView();
-
-                //--------- Cerrar la conexión a la base de datos-----------------
-                //   conexion.CerrarConexion();
-
-                //   if (filasAfectadas > 0)
-                //   {
-                //       MessageBox.Show("Libro dado de alta exitosamente.");
-                //      LimpiarFormulario();
-                //  }
-                // else
-                //  {
-                //      MessageBox.Show("Error al dar de alta el libro.");
-                //  }
+                MessageBox.Show("Debe ingresar solamente 13 digitos.");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message);
+                try
+                {
+                    //--------- Obtener los datos del formulario-----------
+                    string isbn = txtISBN.Text;
+                    string titulo = txtTitulo.Text;
+                    string autor = txtAutor.Text;
+                    string genero = cmbGenero.Text;
+                    int cantEjemplares = Convert.ToInt32(txtCantEjemplares.Text);
+                    int anioPublicacion = Convert.ToInt32(txtAnioPublicacion.Text);
+
+                    // ------------Abrir la conexión a la base de datos---------------
+                    //  conexion.AbrirConexion();
+
+                    // -------------Crear el comando SQL para la inserción--------------
+                    string consulta = $"INSERT INTO Libros (ISBN, Titulo, Autor, Genero, Cant_Ejemplares, AnioPublicacion) " +
+                        $"VALUES ('{isbn}', '{titulo}', '{autor}', '{genero}', {cantEjemplares}, {anioPublicacion})";
+
+                    //  SqlCommand comando = conexion.CrearComando(consulta);
+
+                    // -----------Ejecutar el comando de inserción----------
+                    //  int filasAfectadas = comando.ExecuteNonQuery();
+
+                    // Actualizar el DataGridView con los nuevos datos
+                    CargarDatosDataGridView();
+
+                    //--------- Cerrar la conexión a la base de datos-----------------
+                    //   conexion.CerrarConexion();
+
+                    //   if (filasAfectadas > 0)
+                    //   {
+                    //       MessageBox.Show("Libro dado de alta exitosamente.");
+                    //      LimpiarFormulario();
+                    //  }
+                    // else
+                    //  {
+                    //      MessageBox.Show("Error al dar de alta el libro.");
+                    //  }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
+    
+          
 
         private void btnBajaLibro_Click_1(object sender, EventArgs e)
         {
@@ -206,6 +215,23 @@ namespace ProyectoFinal
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void txtISBN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtISBN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+ 
+            if (!char.IsDigit(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número, mandar mensaje
+                MessageBox.Show("Debe solamente ingresar 13 digitos.","Information");   
+            }
+
         }
     }
 }

@@ -51,7 +51,7 @@
             // btnAltaLibro
             // 
             this.btnAltaLibro.Location = new System.Drawing.Point(496, 262);
-            this.btnAltaLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAltaLibro.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaLibro.Name = "btnAltaLibro";
             this.btnAltaLibro.Size = new System.Drawing.Size(138, 102);
             this.btnAltaLibro.TabIndex = 0;
@@ -62,7 +62,7 @@
             // btnBajaLibro
             // 
             this.btnBajaLibro.Location = new System.Drawing.Point(713, 262);
-            this.btnBajaLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBajaLibro.Margin = new System.Windows.Forms.Padding(2);
             this.btnBajaLibro.Name = "btnBajaLibro";
             this.btnBajaLibro.Size = new System.Drawing.Size(120, 102);
             this.btnBajaLibro.TabIndex = 1;
@@ -73,15 +73,17 @@
             // txtISBN
             // 
             this.txtISBN.Location = new System.Drawing.Point(178, 38);
-            this.txtISBN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtISBN.Margin = new System.Windows.Forms.Padding(2);
             this.txtISBN.Name = "txtISBN";
             this.txtISBN.Size = new System.Drawing.Size(167, 20);
             this.txtISBN.TabIndex = 2;
+            this.txtISBN.TextChanged += new System.EventHandler(this.txtISBN_TextChanged);
+            this.txtISBN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtISBN_KeyPress);
             // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(178, 80);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(167, 20);
             this.txtTitulo.TabIndex = 3;
@@ -89,7 +91,7 @@
             // txtAutor
             // 
             this.txtAutor.Location = new System.Drawing.Point(178, 122);
-            this.txtAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAutor.Margin = new System.Windows.Forms.Padding(2);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(167, 20);
             this.txtAutor.TabIndex = 4;
@@ -97,7 +99,7 @@
             // txtCantEjemplares
             // 
             this.txtCantEjemplares.Location = new System.Drawing.Point(178, 190);
-            this.txtCantEjemplares.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantEjemplares.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantEjemplares.Name = "txtCantEjemplares";
             this.txtCantEjemplares.Size = new System.Drawing.Size(167, 20);
             this.txtCantEjemplares.TabIndex = 5;
@@ -105,7 +107,7 @@
             // txtAnioPublicacion
             // 
             this.txtAnioPublicacion.Location = new System.Drawing.Point(178, 228);
-            this.txtAnioPublicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnioPublicacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnioPublicacion.Name = "txtAnioPublicacion";
             this.txtAnioPublicacion.Size = new System.Drawing.Size(167, 20);
             this.txtAnioPublicacion.TabIndex = 6;
@@ -125,9 +127,9 @@
             this.grpDatosLibros.Controls.Add(this.txtCantEjemplares);
             this.grpDatosLibros.Controls.Add(this.txtAutor);
             this.grpDatosLibros.Location = new System.Drawing.Point(9, 34);
-            this.grpDatosLibros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDatosLibros.Margin = new System.Windows.Forms.Padding(2);
             this.grpDatosLibros.Name = "grpDatosLibros";
-            this.grpDatosLibros.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpDatosLibros.Padding = new System.Windows.Forms.Padding(2);
             this.grpDatosLibros.Size = new System.Drawing.Size(380, 331);
             this.grpDatosLibros.TabIndex = 7;
             this.grpDatosLibros.TabStop = false;
@@ -143,7 +145,7 @@
             "Ciencia ficcion",
             "Aventura"});
             this.cmbGenero.Location = new System.Drawing.Point(178, 153);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(2);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(167, 21);
             this.cmbGenero.TabIndex = 13;
@@ -214,7 +216,7 @@
             this.dtgLibros.AllowUserToDeleteRows = false;
             this.dtgLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgLibros.Location = new System.Drawing.Point(416, 34);
-            this.dtgLibros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgLibros.Margin = new System.Windows.Forms.Padding(2);
             this.dtgLibros.Name = "dtgLibros";
             this.dtgLibros.RowHeadersWidth = 51;
             this.dtgLibros.RowTemplate.Height = 24;
@@ -232,7 +234,7 @@
             this.Controls.Add(this.grpDatosLibros);
             this.Controls.Add(this.btnBajaLibro);
             this.Controls.Add(this.btnAltaLibro);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLibros";
             this.Text = "FormLibros";
             this.Load += new System.EventHandler(this.FormLibros_Load);
