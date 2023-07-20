@@ -20,13 +20,13 @@ namespace ProyectoFinal
 
         private void btnRedirigir_Click(object sender, EventArgs e)
         {
-    
+   //ESTA PARTE NO SIRVE YA, PERO NO LA BORRO POR SI SE ROMPE EL PROYECTO
                 // Crear una instancia de la FormRedirigida
-                FormLibros formRedirigida = new FormLibros();
-
+              //  FormLibros formRedirigida = new FormLibros();
+              
                 // Mostrar la FormRedirigida utilizando el método Show()
-                formRedirigida.Show();
-                this.Hide();
+              //  formRedirigida.Show();
+              //  this.Hide();
 
         }
 
@@ -37,6 +37,10 @@ namespace ProyectoFinal
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+
+            //Variable para redirigir al panel de control principal
+            Redireccionamiento formRedireccionamiento = new Redireccionamiento();
+
             //Agregar campo Contraseña a la tabla usuario
             string usuario = txtUsername.Text;
             string contraseña = txtPassword.Text;
@@ -101,6 +105,9 @@ namespace ProyectoFinal
                     }
                 }
             }
+            // Esto es para redirigir a la forma Redireccionamiento.cs, quitar comentarios cuando se asegure que funcione (Sin probar aun)
+           // formRedireccionamiento.Show();
+           // this.Hide();
         }
     }
 }
