@@ -65,11 +65,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLibros.cs">
+    <Compile Include="Libros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLibros.Designer.cs">
-      <DependentUpon>FormLibros.cs</DependentUpon>
+    <Compile Include="Libros.Designer.cs">
+      <DependentUpon>Libros.cs</DependentUpon>
     </Compile>
     <Compile Include="Prestamo.cs">
       <SubType>Form</SubType>
@@ -94,8 +94,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLibros.resx">
-      <DependentUpon>FormLibros.cs</DependentUpon>
+    <EmbeddedResource Include="Libros.resx">
+      <DependentUpon>Libros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prestamo.resx">
       <DependentUpon>Prestamo.cs</DependentUpon>

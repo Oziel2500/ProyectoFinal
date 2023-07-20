@@ -20,7 +20,7 @@ namespace ProyectoFinal
         private void btnAltasBajasLibros_Click(object sender, EventArgs e)
         {
             // Redirigir al formulario de Alta y Bajas de Libros
-            FormLibros formLibros = new FormLibros();
+            Libros formLibros = new Libros();
             formLibros.Show();
             
         }

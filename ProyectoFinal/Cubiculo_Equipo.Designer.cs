@@ -93,6 +93,7 @@ namespace ProyectoFinal
             this.btnLiberar.TabIndex = 48;
             this.btnLiberar.Text = "Liberar cubiculo";
             this.btnLiberar.UseVisualStyleBackColor = false;
+            this.btnLiberar.Click += new System.EventHandler(this.btnLiberar_Click);
             // 
             // rdbLiberar
             // 

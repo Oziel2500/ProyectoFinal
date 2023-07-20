@@ -22,5 +22,10 @@ namespace ProyectoFinal
         {
 
         }
+
+        private void btnLiberar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
