@@ -15,6 +15,7 @@ namespace ProyectoFinal
     {
 
         // Conexion conexion;
+        string connectionString = "Data Source = ALEJANDROMG\\SQLEXPRESS01; Initial Catalog = Biblioteca; User ID=Administrador;Password=Administrador; ";
         public FormLibros()
         {
             InitializeComponent();

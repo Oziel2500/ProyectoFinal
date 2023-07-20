@@ -12,9 +12,15 @@ namespace ProyectoFinal
 {
     public partial class Cubiculo_Equipo : Form
     {
+        string connectionString = "Data Source = ALEJANDROMG\\SQLEXPRESS01; Initial Catalog = Biblioteca; User ID=Administrador;Password=Administrador; ";
         public Cubiculo_Equipo()
         {
             InitializeComponent();
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

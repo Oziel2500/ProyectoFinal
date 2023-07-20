@@ -71,6 +71,12 @@
     <Compile Include="FormLibros.Designer.cs">
       <DependentUpon>FormLibros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Prestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamo.Designer.cs">
+      <DependentUpon>Prestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Redireccionamiento.cs">
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLibros.resx">
       <DependentUpon>FormLibros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamo.resx">
+      <DependentUpon>Prestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

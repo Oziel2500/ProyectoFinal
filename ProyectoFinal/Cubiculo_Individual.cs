@@ -13,6 +13,7 @@ namespace ProyectoFinal
 {
     public partial class Cubiculo_Individual : Form
     {
+        string connectionString = "Data Source = ALEJANDROMG\\SQLEXPRESS01; Initial Catalog = Biblioteca; User ID=Administrador;Password=Administrador; ";
         private Conexion conexionSQL;
         public bool c1, c2, c3, c4, c5, c6;
         public Cubiculo_Individual()

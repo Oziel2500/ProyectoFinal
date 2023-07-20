@@ -62,9 +62,10 @@ namespace ProyectoFinal
             // Cubiculo2
             // 
             this.Cubiculo2.BackColor = System.Drawing.Color.Green;
-            this.Cubiculo2.Location = new System.Drawing.Point(22, 202);
+            this.Cubiculo2.Location = new System.Drawing.Point(29, 249);
+            this.Cubiculo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cubiculo2.Name = "Cubiculo2";
-            this.Cubiculo2.Size = new System.Drawing.Size(149, 73);
+            this.Cubiculo2.Size = new System.Drawing.Size(199, 90);
             this.Cubiculo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cubiculo2.TabIndex = 50;
             this.Cubiculo2.TabStop = false;
@@ -72,9 +73,10 @@ namespace ProyectoFinal
             // rdbRegistrar
             // 
             this.rdbRegistrar.AutoSize = true;
-            this.rdbRegistrar.Location = new System.Drawing.Point(381, 102);
+            this.rdbRegistrar.Location = new System.Drawing.Point(508, 126);
+            this.rdbRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbRegistrar.Name = "rdbRegistrar";
-            this.rdbRegistrar.Size = new System.Drawing.Size(67, 17);
+            this.rdbRegistrar.Size = new System.Drawing.Size(87, 21);
             this.rdbRegistrar.TabIndex = 47;
             this.rdbRegistrar.TabStop = true;
             this.rdbRegistrar.Text = "Registrar";
@@ -84,9 +86,10 @@ namespace ProyectoFinal
             // 
             this.btnLiberar.BackColor = System.Drawing.SystemColors.Control;
             this.btnLiberar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLiberar.Location = new System.Drawing.Point(471, 31);
+            this.btnLiberar.Location = new System.Drawing.Point(628, 38);
+            this.btnLiberar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLiberar.Name = "btnLiberar";
-            this.btnLiberar.Size = new System.Drawing.Size(90, 29);
+            this.btnLiberar.Size = new System.Drawing.Size(120, 36);
             this.btnLiberar.TabIndex = 48;
             this.btnLiberar.Text = "Liberar cubiculo";
             this.btnLiberar.UseVisualStyleBackColor = false;
@@ -94,9 +97,10 @@ namespace ProyectoFinal
             // rdbLiberar
             // 
             this.rdbLiberar.AutoSize = true;
-            this.rdbLiberar.Location = new System.Drawing.Point(381, 37);
+            this.rdbLiberar.Location = new System.Drawing.Point(508, 46);
+            this.rdbLiberar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbLiberar.Name = "rdbLiberar";
-            this.rdbLiberar.Size = new System.Drawing.Size(57, 17);
+            this.rdbLiberar.Size = new System.Drawing.Size(74, 21);
             this.rdbLiberar.TabIndex = 46;
             this.rdbLiberar.TabStop = true;
             this.rdbLiberar.Text = "Liberar";
@@ -109,9 +113,11 @@ namespace ProyectoFinal
             this.grpbRegistrar.Controls.Add(this.txtCubiculo);
             this.grpbRegistrar.Controls.Add(this.btnRegistro);
             this.grpbRegistrar.Controls.Add(this.txtId_Usuario);
-            this.grpbRegistrar.Location = new System.Drawing.Point(390, 302);
+            this.grpbRegistrar.Location = new System.Drawing.Point(520, 372);
+            this.grpbRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpbRegistrar.Name = "grpbRegistrar";
-            this.grpbRegistrar.Size = new System.Drawing.Size(388, 119);
+            this.grpbRegistrar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpbRegistrar.Size = new System.Drawing.Size(517, 146);
             this.grpbRegistrar.TabIndex = 49;
             this.grpbRegistrar.TabStop = false;
             this.grpbRegistrar.Text = "Registar";
@@ -119,105 +125,118 @@ namespace ProyectoFinal
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(28, 71);
+            this.label8.Location = new System.Drawing.Point(37, 87);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(106, 13);
+            this.label8.Size = new System.Drawing.Size(142, 17);
             this.label8.TabIndex = 19;
             this.label8.Text = "Cantidad de usuarios";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 27);
+            this.label7.Location = new System.Drawing.Point(57, 33);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 18;
             this.label7.Text = "Cubiculo";
             // 
             // txtCubiculo
             // 
-            this.txtCubiculo.Location = new System.Drawing.Point(18, 43);
+            this.txtCubiculo.Location = new System.Drawing.Point(24, 53);
+            this.txtCubiculo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCubiculo.Name = "txtCubiculo";
-            this.txtCubiculo.Size = new System.Drawing.Size(126, 20);
+            this.txtCubiculo.Size = new System.Drawing.Size(167, 22);
             this.txtCubiculo.TabIndex = 17;
             // 
             // btnRegistro
             // 
             this.btnRegistro.BackColor = System.Drawing.SystemColors.Control;
-            this.btnRegistro.Location = new System.Drawing.Point(267, 71);
+            this.btnRegistro.Location = new System.Drawing.Point(356, 87);
+            this.btnRegistro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(90, 29);
+            this.btnRegistro.Size = new System.Drawing.Size(120, 36);
             this.btnRegistro.TabIndex = 16;
             this.btnRegistro.Text = "Registrar";
             this.btnRegistro.UseVisualStyleBackColor = false;
+            this.btnRegistro.Click += new System.EventHandler(this.btnRegistro_Click);
             // 
             // txtId_Usuario
             // 
-            this.txtId_Usuario.Location = new System.Drawing.Point(18, 87);
+            this.txtId_Usuario.Location = new System.Drawing.Point(24, 107);
+            this.txtId_Usuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtId_Usuario.Name = "txtId_Usuario";
-            this.txtId_Usuario.Size = new System.Drawing.Size(126, 20);
+            this.txtId_Usuario.Size = new System.Drawing.Size(167, 22);
             this.txtId_Usuario.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(249, 311);
+            this.label6.Location = new System.Drawing.Point(332, 383);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.Size = new System.Drawing.Size(89, 17);
             this.label6.TabIndex = 45;
             this.label6.Text = "CUBICULO 6";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(249, 169);
+            this.label5.Location = new System.Drawing.Point(332, 208);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.Size = new System.Drawing.Size(89, 17);
             this.label5.TabIndex = 44;
             this.label5.Text = "CUBICULO 5";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(249, 37);
+            this.label4.Location = new System.Drawing.Point(332, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(89, 17);
             this.label4.TabIndex = 43;
             this.label4.Text = "CUBICULO 4";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 311);
+            this.label3.Location = new System.Drawing.Point(75, 383);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
+            this.label3.Size = new System.Drawing.Size(89, 17);
             this.label3.TabIndex = 42;
             this.label3.Text = "CUBICULO 3";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 169);
+            this.label2.Location = new System.Drawing.Point(75, 208);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 41;
             this.label2.Text = "CUBICULO 2";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(56, 37);
+            this.label1.Location = new System.Drawing.Point(75, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.Size = new System.Drawing.Size(89, 17);
             this.label1.TabIndex = 40;
             this.label1.Text = "CUBICULO 1";
             // 
             // Cubiculo6
             // 
             this.Cubiculo6.BackColor = System.Drawing.Color.Green;
-            this.Cubiculo6.Location = new System.Drawing.Point(205, 343);
+            this.Cubiculo6.Location = new System.Drawing.Point(273, 422);
+            this.Cubiculo6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cubiculo6.Name = "Cubiculo6";
-            this.Cubiculo6.Size = new System.Drawing.Size(149, 73);
+            this.Cubiculo6.Size = new System.Drawing.Size(199, 90);
             this.Cubiculo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cubiculo6.TabIndex = 39;
             this.Cubiculo6.TabStop = false;
@@ -225,9 +244,10 @@ namespace ProyectoFinal
             // Cubiculo5
             // 
             this.Cubiculo5.BackColor = System.Drawing.Color.Green;
-            this.Cubiculo5.Location = new System.Drawing.Point(205, 202);
+            this.Cubiculo5.Location = new System.Drawing.Point(273, 249);
+            this.Cubiculo5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cubiculo5.Name = "Cubiculo5";
-            this.Cubiculo5.Size = new System.Drawing.Size(149, 73);
+            this.Cubiculo5.Size = new System.Drawing.Size(199, 90);
             this.Cubiculo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cubiculo5.TabIndex = 38;
             this.Cubiculo5.TabStop = false;
@@ -235,9 +255,10 @@ namespace ProyectoFinal
             // Cubiculo4
             // 
             this.Cubiculo4.BackColor = System.Drawing.Color.Green;
-            this.Cubiculo4.Location = new System.Drawing.Point(205, 65);
+            this.Cubiculo4.Location = new System.Drawing.Point(273, 80);
+            this.Cubiculo4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cubiculo4.Name = "Cubiculo4";
-            this.Cubiculo4.Size = new System.Drawing.Size(149, 73);
+            this.Cubiculo4.Size = new System.Drawing.Size(199, 90);
             this.Cubiculo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cubiculo4.TabIndex = 37;
             this.Cubiculo4.TabStop = false;
@@ -245,9 +266,10 @@ namespace ProyectoFinal
             // Cubiculo3
             // 
             this.Cubiculo3.BackColor = System.Drawing.Color.Green;
-            this.Cubiculo3.Location = new System.Drawing.Point(22, 343);
+            this.Cubiculo3.Location = new System.Drawing.Point(29, 422);
+            this.Cubiculo3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cubiculo3.Name = "Cubiculo3";
-            this.Cubiculo3.Size = new System.Drawing.Size(149, 73);
+            this.Cubiculo3.Size = new System.Drawing.Size(199, 90);
             this.Cubiculo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cubiculo3.TabIndex = 36;
             this.Cubiculo3.TabStop = false;
@@ -255,18 +277,19 @@ namespace ProyectoFinal
             // Cubiculo1
             // 
             this.Cubiculo1.BackColor = System.Drawing.Color.Green;
-            this.Cubiculo1.Location = new System.Drawing.Point(22, 65);
+            this.Cubiculo1.Location = new System.Drawing.Point(29, 80);
+            this.Cubiculo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cubiculo1.Name = "Cubiculo1";
-            this.Cubiculo1.Size = new System.Drawing.Size(149, 73);
+            this.Cubiculo1.Size = new System.Drawing.Size(199, 90);
             this.Cubiculo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Cubiculo1.TabIndex = 35;
             this.Cubiculo1.TabStop = false;
             // 
             // Cubiculo_Equipo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.Cubiculo2);
             this.Controls.Add(this.rdbRegistrar);
             this.Controls.Add(this.btnLiberar);
@@ -283,6 +306,7 @@ namespace ProyectoFinal
             this.Controls.Add(this.Cubiculo4);
             this.Controls.Add(this.Cubiculo3);
             this.Controls.Add(this.Cubiculo1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Cubiculo_Equipo";
             this.Text = "Cubiculo_Equipo";
             ((System.ComponentModel.ISupportInitialize)(this.Cubiculo2)).EndInit();
