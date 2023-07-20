@@ -13,20 +13,22 @@ namespace ProyectoFinal
 {
     public partial class FormLibros : Form
     {
-
-        // Conexion conexion;
+        private DataTable dtLibro;
+        string idgenero = "";
+        int generos = 0;
+         Conexion conexion;
         string connectionString = "Data Source = ALEJANDROMG\\SQLEXPRESS01; Initial Catalog = Biblioteca; User ID=Administrador;Password=Administrador; ";
         public FormLibros()
         {
             InitializeComponent();
-
+            dtLibro = new DataTable();
 
             // ----------Inicializar la clase de conexión con los datos de acceso a la base de datos------------
-            // string servidor = "tu_servidor";
-            // string baseDatos = "Biblioteca";
-            // string usuario = "tu_usuario";
-            // string contraseña = "tu_contraseña";
-            // conexion = new Conexion(servidor, baseDatos, usuario, contraseña);
+             string servidor = "ALEJANDROMG\\SQLEXPRESS01";
+             string baseDatos = "Biblioteca";
+             string usuario = "Administrador";
+             string contraseña = "Administrador";
+             conexion = new Conexion(servidor, baseDatos, usuario, contraseña);
 
             // Configurar el DataGridView
             dtgLibros.AutoGenerateColumns = false;
@@ -40,17 +42,19 @@ namespace ProyectoFinal
             dtgLibros.Columns.Add("Titulo", "Título");
             dtgLibros.Columns.Add("Autor", "Autor");
             dtgLibros.Columns.Add("Genero", "Género");
+            dtgLibros.Columns.Add("IdGenero", "IdGenero");
             dtgLibros.Columns.Add("Cant_Ejemplares", "Cantidad Ejemplares");
             dtgLibros.Columns.Add("AnioPublicacion", "Año de Publicación");
 
             // Llamar al método para cargar los datos en el DataGridView
-            //  CargarDatosDataGridView();
+             CargarDatosDataGridView();
 
         }
 
         private void FormLibros_Load(object sender, EventArgs e)
         {
-
+            
+            //CargarDatosDataGridView();
         }
 
 
@@ -83,26 +87,40 @@ namespace ProyectoFinal
         {
             try
             {
-                // -------------------Abrir la conexión a la base de datos-------------------
-                //  conexion.AbrirConexion();
+                //              // -------------------Abrir la conexión a la base de datos-------------------
+                //                conexion.AbrirConexion();
 
-                // --------------------Crear el comando SQL para obtener los datos de la tabla Libros------------------
-                // string consulta = "SELECT ID, ISBN, Titulo, Autor, Genero, Cant_Ejemplares, AnioPublicacion FROM Libros";
-                // SqlCommand comando = conexion.CrearComando(consulta);
+                //              // --------------------Crear el comando SQL para obtener los datos de la tabla Libros------------------
+                //               string consulta = "SELECT ID, ISBN, Titulo, Autor, Genero,Id_Genero, Cant_Ejemplares, AnioPublicacion FROM Libros";
+                //               SqlCommand comando = conexion.CrearComando(consulta);
 
-                // -----------Ejecutar el comando y obtener los datos en un DataTable-----------
-                // DataTable dt = new DataTable();
-                //SqlDataAdapter adaptador = new SqlDataAdapter(comando);
-                //adaptador.Fill(dt);
+                //              // -----------Ejecutar el comando y obtener los datos en un DataTable-----------
+                //              DataTable dt = new DataTable();
+                //              SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                //              adaptador.Fill(dt);
 
-                // -------------Asignar el DataTable como fuente de datos para el DataGridView----------------
-                // dtgLibros.DataSource = dt;
+                //              // -------------Asignar el DataTable como fuente de datos para el DataGridView----------------
+                //               dtgLibros.DataSource = dt;
 
-                // ---------------Cerrar la conexión a la base de datos-----------------
-                // conexion.CerrarConexion();
+                //              // ---------------Cerrar la conexión a la base de datos-----------------
+                //               conexion.CerrarConexion();
+                ////                 Actualizar el DataGridView con los nuevos datos
 
-                // Actualizar el DataGridView con los nuevos datos
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM Libros";
 
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            dtLibro.Clear();
+                            adapter.Fill(dtLibro);
+                        }
+                    }
+                }
+                dtgLibros.DataSource = dtgLibros;
             }
             catch (Exception ex)
             {
@@ -128,6 +146,15 @@ namespace ProyectoFinal
 
         private void btnAltaLibro_Click_1(object sender, EventArgs e)
         {
+            idgenero = cmbGenero.Text;
+            switch (idgenero)
+            {
+                case "Terror": generos = 6; break;
+                case "Comedia": generos = 7; break;
+                case"Romance": generos = 8;  break;
+                case "Ciencia ficcion": generos = 9; break;
+                case "Aventura": generos = 10; break;
+            }
             if (txtISBN.TextLength != 13)
             {
                 MessageBox.Show("Debe ingresar solamente 13 digitos.");
@@ -145,32 +172,31 @@ namespace ProyectoFinal
                     int anioPublicacion = Convert.ToInt32(txtAnioPublicacion.Text);
 
                     // ------------Abrir la conexión a la base de datos---------------
-                    //  conexion.AbrirConexion();
+                     conexion.AbrirConexion();
 
                     // -------------Crear el comando SQL para la inserción--------------
-                    string consulta = $"INSERT INTO Libros (ISBN, Titulo, Autor, Genero, Cant_Ejemplares, AnioPublicacion) " +
-                        $"VALUES ('{isbn}', '{titulo}', '{autor}', '{genero}', {cantEjemplares}, {anioPublicacion})";
+                    string consulta = $"INSERT INTO Libros  VALUES ('{isbn}', '{titulo}', '{autor}', '{genero}',{generos}, {cantEjemplares}, {anioPublicacion})";
 
-                    //  SqlCommand comando = conexion.CrearComando(consulta);
+                      SqlCommand comando = conexion.CrearComando(consulta);
 
                     // -----------Ejecutar el comando de inserción----------
-                    //  int filasAfectadas = comando.ExecuteNonQuery();
+                      int filasAfectadas = comando.ExecuteNonQuery();
 
                     // Actualizar el DataGridView con los nuevos datos
-                    CargarDatosDataGridView();
+                    //CargarDatosDataGridView();
 
                     //--------- Cerrar la conexión a la base de datos-----------------
                     //   conexion.CerrarConexion();
 
-                    //   if (filasAfectadas > 0)
-                    //   {
-                    //       MessageBox.Show("Libro dado de alta exitosamente.");
-                    //      LimpiarFormulario();
-                    //  }
-                    // else
-                    //  {
-                    //      MessageBox.Show("Error al dar de alta el libro.");
-                    //  }
+                       if (filasAfectadas > 0)
+                       {
+                           MessageBox.Show("Libro dado de alta exitosamente.");
+                          LimpiarFormulario();
+                      }
+                     else
+                      {
+                          MessageBox.Show("Error al dar de alta el libro.");
+                      }
                 }
                 catch (Exception ex)
                 {
@@ -189,27 +215,27 @@ namespace ProyectoFinal
                 int idLibro = ObtenerIdLibroSeleccionado();
 
                 //---------------- Abrir la conexión a la base de datos---------------
-                //conexion.AbrirConexion();
+                conexion.AbrirConexion();
 
                 // Crear el comando SQL para la eliminación
                 string consulta = $"DELETE FROM Libros WHERE ID = {idLibro}";
 
-                // SqlCommand comando = conexion.CrearComando(consulta);
+                 SqlCommand comando = conexion.CrearComando(consulta);
 
                 // -------------------Ejecutar el comando de eliminación----------------
-                //  int filasAfectadas = comando.ExecuteNonQuery();
+                  int filasAfectadas = comando.ExecuteNonQuery();
 
                 // ---------------Cerrar la conexión a la base de datos--------------
-                // conexion.CerrarConexion();
+                conexion.CerrarConexion();
 
-                //  if (filasAfectadas > 0)
+                  if (filasAfectadas > 0)
                 {
-                    //    MessageBox.Show("Libro dado de baja exitosamente.");
-                    //    LimpiarFormulario();
+                        MessageBox.Show("Libro dado de baja exitosamente.");
+                        LimpiarFormulario();
                 }
-                // else
+                 else
                 {
-                    //    MessageBox.Show("Error al dar de baja el libro.");
+                        MessageBox.Show("Error al dar de baja el libro.");
                 }
             }
             catch (Exception ex)
@@ -220,14 +246,18 @@ namespace ProyectoFinal
 
         private void txtISBN_TextChanged(object sender, EventArgs e)
         {
-
+            //if (!char.IsDigit(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar != (char)Keys.Back)
+            //{
+            //    // Si no es un número, mandar mensaje
+            //    MessageBox.Show("Debe solamente ingresar 13 digitos.", "Information");
+            //}
         }
 
         private void txtISBN_KeyPress(object sender, KeyPressEventArgs e)
         {
             
  
-            if (!char.IsDigit(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar != (char)Keys.Back)
+            if (!char.IsDigit(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
                 // Si no es un número, mandar mensaje
                 MessageBox.Show("Debe solamente ingresar 13 digitos.","Information");   

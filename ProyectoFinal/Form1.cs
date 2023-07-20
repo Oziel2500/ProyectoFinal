@@ -69,7 +69,9 @@ namespace ProyectoFinal
 
                         if (count > 0)
                         {
+                            connection.Close();
                             MessageBox.Show("hola administrador");//Formulario de los administradores
+                            formRedireccionamiento.Show();
                         }
                         else
                         {
@@ -96,6 +98,7 @@ namespace ProyectoFinal
 
                         if (count > 0)
                         {
+                            connection.Close();
                             MessageBox.Show("¡Bienvenido, Empleado!");//Formulario del empleado
                         }
                         else

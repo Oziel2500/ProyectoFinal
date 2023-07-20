@@ -35,13 +35,16 @@ namespace ProyectoFinal
                 MessageBox.Show("Selecciona un libro y un usuario válidos.");
                 return;
             }
+            else
+            {
+                DateTime fechaPrestamo = dtpFechaPrestamo.Value;
+                DateTime fechaEntrega = dtpFechaEntrega.Value;
 
-            DateTime fechaPrestamo = dtpFechaPrestamo.Value;
-            DateTime fechaEntrega = dtpFechaEntrega.Value;
-
-            RegistrarPrestamo(idLibro, idUsuario, fechaPrestamo, fechaEntrega);
-            MessageBox.Show("Préstamo registrado correctamente.");
-            LimpiarCampos();
+                RegistrarPrestamo(idLibro, idUsuario, fechaPrestamo, fechaEntrega);
+                MessageBox.Show("Préstamo registrado correctamente.");
+                LimpiarCampos();
+            }
+          
         }
 
         private void Prestamo_Load(object sender, EventArgs e)
